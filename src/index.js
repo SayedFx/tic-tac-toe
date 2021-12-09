@@ -8,11 +8,13 @@
 //module pattern is a factory in the form of ieef
 //Use module pattern if you a singleton is required
 //Use factory pattern if multiple objects of a type is required
-import view from './view'
-import model from './model'
-
-
+import view from "./view";
+import model from "./model";
 
 const gameController = (() => {
-  view.displayBoard(model.board);
+  const board = model.board;
+  view.createView(board, (coordinates) => {
+    board[coordinates.row][coordinates.col] = "X";
+    view.updateView(board);
+  });
 })();
