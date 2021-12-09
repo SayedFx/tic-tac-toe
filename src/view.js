@@ -29,9 +29,7 @@ const view = (() => {
   const updateView = (board) => {
     board.forEach((boradRow, rowIndex) => {
       boradRow.forEach((cellContent, colIndex) => {
-        console.log(boardCells);
         boardCells[rowIndex][colIndex].element.innerText = cellContent;
-        console.log(boardCells);
       });
     });
   };
