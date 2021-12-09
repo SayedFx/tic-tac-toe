@@ -1,0 +1,23 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "tic tac toe game: an odin project",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SayedFx/tic-tac-toe.git"
+  },
+  "author": "Yousef Sayed <sayed.yousaf@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SayedFx/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/SayedFx/tic-tac-toe#readme",
+  "devDependencies": {
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
