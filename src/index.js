@@ -10,6 +10,7 @@
 //Use factory pattern if multiple objects of a type is required
 import view from "./view";
 import model from "./model";
+import "./style.css";
 
 const gameController = (() => {
   const board = model.board;
