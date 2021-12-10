@@ -10,12 +10,17 @@
 //Use factory pattern if multiple objects of a type is required
 import view from "./view";
 import model from "./model";
+import player from "./player";
+import turn from "./turn";
+
 import "./style.css";
 
 const gameController = (() => {
   const board = model.board;
+  const players = [player("O"), player("X")];
+
   view.createView(board, (coordinates) => {
-    board[coordinates.row][coordinates.col] = "X";
+    board[coordinates.row][coordinates.col] = players[turn.next()].side;
     view.updateView(board);
   });
 })();
