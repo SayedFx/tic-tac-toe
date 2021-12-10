@@ -20,7 +20,9 @@ const gameController = (() => {
   const players = [player("O"), player("X")];
 
   view.createView(board, (coordinates) => {
-    board[coordinates.row][coordinates.col] = players[turn.next()].side;
+    model.getCell(coordinates) === ""
+      ? model.setCell(coordinates, players[turn.next()].side)
+      : null;
     view.updateView(board);
   });
 })();
