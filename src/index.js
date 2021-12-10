@@ -17,12 +17,18 @@ import "./style.css";
 
 const gameController = (() => {
   const board = model.board;
-  const players = [player("O"), player("X")];
+  const O = -1;
+  const X = 1;
+
+  const players = [player(O), player(X)];
 
   view.createView(board, (coordinates) => {
-    model.getCell(coordinates) === ""
-      ? model.setCell(coordinates, players[turn.next()].side)
-      : null;
+    const currnetCell = model.getCell(coordinates);
+
+    if (!currnetCell) {
+      const marker = players[turn.next()].side;
+      model.setCell(coordinates, marker);
+    }
     view.updateView(board);
   });
 })();
