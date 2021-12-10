@@ -9,7 +9,6 @@ const cell = (rowIndex, colIndex) => {
     cell.classList.add("cell");
     cell.addEventListener("click", () => {
       clickHandlers.forEach((handler) => handler({ row, col }));
-      console.log(clickHandlers, row, col);
     });
     return cell;
   };
