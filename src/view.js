@@ -9,6 +9,10 @@ const view = (() => {
   };
 
   const boardView = document.querySelector(".board");
+  const markCell = (element, value) => {
+    const marker = value === 0 ? "" : value === -1 ? "O" : "X";
+    element.innerText = marker;
+  };
 
   const createView = (board, viewChangeListener) => {
     board.forEach((boradRow, rowIndex) => {
@@ -19,7 +23,7 @@ const view = (() => {
         const cellObject = cell(rowIndex, colIndex);
         boardCellsRow.push(cellObject);
         cellObject.addClickHandler(viewChangeListener);
-        cellObject.element.innerText = cellContent;
+        markCell(cellObject.element, cellContent);
         row.appendChild(cellObject.element);
       });
       boardView.appendChild(row);
@@ -29,7 +33,8 @@ const view = (() => {
   const updateView = (board) => {
     board.forEach((boradRow, rowIndex) => {
       boradRow.forEach((cellContent, colIndex) => {
-        boardCells[rowIndex][colIndex].element.innerText = cellContent;
+        const element = boardCells[rowIndex][colIndex].element;
+        markCell(element, cellContent);
       });
     });
   };
