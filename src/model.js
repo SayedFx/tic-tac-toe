@@ -1,8 +1,8 @@
 const model = (() => {
   const board = [
-    ["", "", ""],
-    ["", "", ""],
-    ["", "", ""],
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
   ];
 
   const getCell = (coordinates) => board[coordinates.row][coordinates.col];
