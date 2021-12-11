@@ -1,11 +1,14 @@
 @use 'variables';
 
 .board{
-  background-color:#eee;
   display:flex;
+  align-items:center;
+  justify-content:center;
   flex-direction:column;
   font-size:2rem;
+  padding:2rem;
   &-row{
+    background-color:#eee;
     display:flex;
     &:nth-of-type(1),&:nth-of-type(3){
      .cell{
