@@ -13,7 +13,8 @@ import model from "./components/model";
 import player from "./components/player";
 import turn from "./components/turn";
 
-import "./styles/index.scss"
+import "./index.html";
+import "./styles/index.scss";
 
 const gameController = (() => {
   const board = model.board;

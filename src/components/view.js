@@ -4,7 +4,7 @@ const view = (() => {
   const boardCells = [];
   const createRow = () => {
     const row = document.createElement("div");
-    row.classList.add("row");
+    row.classList.add("board-row");
     return row;
   };
 
