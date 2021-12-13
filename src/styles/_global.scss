@@ -21,6 +21,9 @@
       cursor:pointer;
     }
   }
+  &-disabled{
+    pointer-events:none;
+  }
 }
 @media screen and (max-width:765px){
   .board{
@@ -28,5 +31,9 @@
   }
   .row{
     padding:1vmin !important;
+  }
+  ::placeholder{
+    font-size:0.9rem;
+    letter-spacing:-1px;
   }
 }
