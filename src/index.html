@@ -10,13 +10,26 @@
   <body>
     <div class="container">
       <div class="row py-5">
-        <div class="col-12 d-flex justify-content-center mb-4">
-          <div class="board shadow-lg "></div>
+        <div class="col-12 d-flex justify-content-center my-1">
+          <p class="display text-secondary text-center">Let the fun begin<br />click start</p>
         </div>
-        <div class="col-12 d-flex flex-column align-items-center justify-content-center ">
-          <div>
-            <button type="button" class="btn btn-outline-secondary">Start</button>
-          </div>
+        <div class="col-12 d-flex justify-content-center mb-4">
+          <div class="board shadow-lg board-disabled"></div>
+        </div>
+        <div class="col-12 d-flex flex-column align-items-center justify-content-center">
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" id="player-o" placeholder="Player O's name" />
+              <input type="text" class="form-control" id="player-x" placeholder="Player X's name" />
+              <div class="input-group">
+                <button class="btn btn-outline-secondary" type="button" id="side-generator">Random</button>
+                <input type="text" class="form-control" id="first-player" placeholder="Side to start first" />
+              </div>
+            </div>
+            <div class="mb3">
+              <button type="submit" class="start btn btn-outline-secondary w-100">Start</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
