@@ -1,5 +1,8 @@
 @use 'variables';
 
+input::placeholder{
+  color:rgba(0,0,0,0.2) !important;
+}
 .board{
   display:flex;
   align-items:center;

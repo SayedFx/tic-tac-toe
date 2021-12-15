@@ -1,7 +1,6 @@
 import view from "./view";
 import model from "./model";
-import turn from "./turn";
-import player from "./player";
+import players from "./players";
 import winnerCheck from "./winnerCheck";
 
 const controller = (() => {
@@ -10,14 +9,10 @@ const controller = (() => {
   let stateListers = [];
 
   const viewChangeListener = (coordinates) => {
-    const O = -1;
-    const X = 1;
-    const players = [player(O), player(X)];
-
     const currnetCellSet = model.getCell(coordinates);
     if (!currnetCellSet) {
-      const marker = players[turn.next()].side;
-      model.setCell(coordinates, marker);
+      const mark = players.next().mark === "X" ? 1 : -1;
+      model.setCell(coordinates, mark);
     }
 
     const Owins = -3;
@@ -44,18 +39,20 @@ const controller = (() => {
 
   const updateStateListeners = () => {
     if (oldState !== state) {
-      stateListers.forEach((listener) => listener(oldState, state));
+      stateListers.forEach((listener) => listener(state));
       oldState = state;
     }
   };
 
   const clear = () => {
     model.clear();
+    oldState = "CONTINUE";
+    state = "CONTINUE";
     view.updateView(model.board);
   };
   view.createView(model.board, viewChangeListener);
 
-  return { stateListers, clear };
+  return { stateListers, clear, players };
 })();
 
 export default controller;

@@ -19,8 +19,14 @@
         <div class="col-12 d-flex flex-column align-items-center justify-content-center">
           <form>
             <div class="mb-3">
-              <input type="text" class="form-control" id="player-o" placeholder="Player O's name" />
-              <input type="text" class="form-control" id="player-x" placeholder="Player X's name" />
+              <div class="input-group">
+                <button class="btn btn-outline-secondary disabled" type="button">X</button>
+                <input type="text" class="form-control" id="player-x" placeholder="Player X's name" />
+              </div>
+              <div class="input-group">
+                <button class="btn btn-outline-secondary disabled" type="button">O</button>
+                <input type="text" class="form-control" id="player-o" placeholder="Player O's name" />
+              </div>
               <div class="input-group">
                 <button class="btn btn-outline-secondary" type="button" id="side-generator">Random</button>
                 <input type="text" class="form-control" id="first-player" placeholder="Side to start first" />
