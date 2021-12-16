@@ -1,4 +1,3 @@
-// get input values and assign them to players
 // add play against AI
 // make the AI make any legal move
 // implement minimax algorithm

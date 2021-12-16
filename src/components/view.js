@@ -5,12 +5,16 @@ const view = (() => {
   const boardView = document.querySelector(".board");
   const display = document.querySelector(".display");
   const start = document.querySelector(".start");
+  const ai = document.querySelector(".ai");
   const playerO = document.querySelector("#player-o");
   const playerX = document.querySelector("#player-x");
   const playerToStart = document.querySelector("#first-player");
   const randSideButton = document.querySelector("#side-generator");
   const boardCells = [];
 
+  ai.addEventListener("click", () => {
+    controller.activateAI();
+  });
   randSideButton.addEventListener("click", () => {
     playerToStart.value = ["O", "X"][Math.floor(Math.random() * 2)];
   });

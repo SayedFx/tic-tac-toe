@@ -39,7 +39,7 @@ const controller = (() => {
 
   const updateStateListeners = () => {
     if (oldState !== state) {
-      stateListers.forEach((listener) => listener(state));
+      stateListeners.forEach((listener) => listener(state));
       oldState = state;
     }
   };
@@ -50,9 +50,14 @@ const controller = (() => {
     state = "CONTINUE";
     view.updateView(model.board);
   };
+
+  const activateAI = () => {
+    console.log("AI activated");
+  };
+
   view.createView(model.board, viewChangeListener);
 
-  return { stateListeners, clear, players };
+  return { stateListeners, clear, players, activateAI };
 })();
 
 export default controller;
