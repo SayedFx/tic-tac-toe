@@ -6,7 +6,7 @@ import winnerCheck from "./winnerCheck";
 const controller = (() => {
   let state = "CONTINUE";
   let oldState = "CONTINUE";
-  let stateListers = [];
+  let stateListeners = [];
 
   const viewChangeListener = (coordinates) => {
     const currnetCellSet = model.getCell(coordinates);
@@ -52,7 +52,7 @@ const controller = (() => {
   };
   view.createView(model.board, viewChangeListener);
 
-  return { stateListers, clear, players };
+  return { stateListeners, clear, players };
 })();
 
 export default controller;
